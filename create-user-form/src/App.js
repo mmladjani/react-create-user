@@ -1,9 +1,12 @@
 import AddUser from './Components/AddUser';
+import UserList from './Components/UserList';
+import './App.css';
 
 function App() {
   return (
       <div>
-        <AddUser></AddUser>
+        <AddUser />
+        <UserList />
     </div>
   );
 }
