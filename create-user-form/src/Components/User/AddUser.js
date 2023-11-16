@@ -1,41 +1,40 @@
 import { useState } from 'react';
 import './AddUser.css';
 
-const AddUser = () => {
+const DUMMY_USER = {
+    'user-name': 'John Doe',
+    'user-age': 25
+}
 
-    let DUMMY_USER = {
-        'user-name': 'John Doe',
-        'age': 25
-    }
+const AddUser = (props) => {
 
     const [userData, setUserData] = useState(DUMMY_USER);
 
-    const inputChangeHandler = (value, input) => {
+    const inputChangeHandler = (event) => {
+        
         setUserData((previousValue) => {
             return {
                 ...previousValue,
-                [input]: value
+                [event.target.id]: event.target.value
             }
-        })
+        }) 
     }
-
-    console.log(userData);
 
     const submitHandler = (event) => {
         event.preventDefault();
-        
-    }
+            props.onAddUser(userData)
+        }
 
     return (
         <div className="main">
             <form onSubmit={submitHandler} className="form">
                 <div className='form-input__section'>
                     <label htmlFor="user-name" className='form-input__label'>Username</label>
-                    <input type="text" id="user-name" className='form-input__field' value={userData['user-name']} onChange={(event) => inputChangeHandler(event.target.value, 'user-name')}></input>
+                    <input type="text" id="user-name" className='form-input__field' value={userData['user-name']} onChange={inputChangeHandler}></input>
                 </div>
                 <div className='form-input__section'>
-                    <label htmlFor="age" className='form-input__label'>Age</label>
-                    <input type="number" id="age" className='form-input__field' value={userData['age']} onChange={(event) => inputChangeHandler(event.target.value, 'age')}></input>
+                    <label htmlFor="user-age" className='form-input__label'>Age</label>
+                    <input type="number" id="user-age" className='form-input__field' value={userData['user-age']} onChange={inputChangeHandler}></input>
                 </div>
                 <button className={'form-button'}>Add user</button>
             </form>
