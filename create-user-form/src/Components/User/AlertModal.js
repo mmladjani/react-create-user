@@ -1,6 +1,11 @@
-const AlertModal = () => {
+import './AlertModal.css';
+
+const AlertModal = (props) => {
+
     return (
-        <p>Please correct username and password</p>
+        <div className="alert-modal centered">
+            <p>{props.message}</p>
+        </div>
     )
 }
 

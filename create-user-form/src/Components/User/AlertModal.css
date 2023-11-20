@@ -1,0 +1,20 @@
+.alert-modal {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 2rem;
+    margin: 0;
+    border-radius: 15px;
+    background-image: linear-gradient(to right top, #4D8076, #417573, #396A6F, #335E69, #315361, #2F4858);
+    justify-content: space-evenly;
+    color: #ffffff;
+    box-shadow: 3px 5px 10px #aaaaaa;
+}
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+  }

@@ -7,6 +7,11 @@ import './App.css';
 function App() {
 
   const [users, setUsers] = useState([]);
+  const [userMessage, setUserMessage] = useState('');
+
+  const addUserMessage = (message) => {
+    setUserMessage(message);
+  }
 
   const addUserToList = (user) => {
     setUsers((previousData) => {
@@ -15,12 +20,14 @@ function App() {
         user
       ]
     })
+    setUserMessage('');
   }
 
   return (
       <div>
-        <AddUser onAddUser={addUserToList}/>
-        {users.length > 0 ? <UserList users={users}/> : <AlertModal/>}
+        <AddUser onAddUser={addUserToList} onAddUserMessage={addUserMessage}/>
+        {users.length > 0 && <UserList users={users} />}
+        {userMessage && <AlertModal message={userMessage} />}
     </div>
   );
 }
