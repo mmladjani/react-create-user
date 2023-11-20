@@ -1,16 +1,18 @@
+import React from 'react';
 import './AlertModal.css';
 import '../../App.css';
+import Card from '../Shared/Card';
 
 const AlertModal = (props) => {
 
 
 
     return (
-        <div className="main">
+        <Card className="main">
             <div className='alert-modal'>
                 <p>{props.message}</p>
             </div>
-        </div>
+        </Card>
     )
 }
 

@@ -1,5 +1,7 @@
+import React from 'react';
 import { useState } from 'react';
 import './AddUser.css';
+import Card from '../Shared/Card';
 
 const DUMMY_USER = {
     'user-name': 'John Doe',
@@ -40,7 +42,7 @@ const AddUser = (props) => {
 
 
     return (
-        <div className="main">
+        <Card className="main">
             <form onSubmit={submitHandler} className="form">
                 <div className='form-input__section'>
                     <label htmlFor="user-name" className='form-input__label'>Username</label>
@@ -52,7 +54,7 @@ const AddUser = (props) => {
                 </div>
                 <button className={'form-button'}>Add user</button>
             </form>
-        </div>
+        </Card>
     )
 }
 
