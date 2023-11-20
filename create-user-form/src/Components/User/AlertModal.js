@@ -1,10 +1,15 @@
 import './AlertModal.css';
+import '../../App.css';
 
 const AlertModal = (props) => {
 
+
+
     return (
-        <div className="alert-modal centered">
-            <p>{props.message}</p>
+        <div className="main">
+            <div className='alert-modal'>
+                <p>{props.message}</p>
+            </div>
         </div>
     )
 }

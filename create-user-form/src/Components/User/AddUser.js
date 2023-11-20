@@ -28,7 +28,7 @@ const AddUser = (props) => {
             customMessage = 'user name must be at least 3 characters long, and user age must be greater then 3...';
             props.onAddUserMessage(customMessage);
         } else if(userData['user-age'] < 3) {
-            customMessage = 'user age must be at great then 3...';
+            customMessage = 'user age must be at greater then 3...';
             props.onAddUserMessage(customMessage);
         } else if(userData['user-name'].length < 3) {
             customMessage = 'user name must be at least 3 characters long...'
