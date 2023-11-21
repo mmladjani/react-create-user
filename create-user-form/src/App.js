@@ -3,7 +3,6 @@ import AddUser from './Components/User/AddUser';
 import UserList from './Components/User/UserList';
 import AlertModal from './Components/User/AlertModal';
 import { useState } from 'react';
-import './App.css';
 
 function App() {
 
@@ -29,7 +28,7 @@ function App() {
         <AddUser onAddUser={addUserToList} onAddUserMessage={addUserMessage}/>
         {users.length > 0 && <UserList users={users} />}
         {userMessage && <AlertModal message={userMessage} />}
-    </div>
+      </div>
   );
 }
 

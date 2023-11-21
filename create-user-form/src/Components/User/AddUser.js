@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
-import './AddUser.css';
+import addUserClasses from './AddUser.module.css';
+import classes from '../../App.module.css';
 import Card from '../Shared/Card';
 
 const DUMMY_USER = {
@@ -42,17 +43,16 @@ const AddUser = (props) => {
 
 
     return (
-        <Card className="main">
-            <form onSubmit={submitHandler} className="form">
-                <div className='form-input__section'>
-                    <label htmlFor="user-name" className='form-input__label'>Username</label>
-                    <input type="text" id="user-name" className='form-input__field' value={userData['user-name']} onChange={inputChangeHandler}></input>
+        <Card className={classes.main}>
+            <form onSubmit={submitHandler} className={addUserClasses.form}>
+                <div className={addUserClasses['form-input__section']}>
+                    <input type="text" id="user-name" className={addUserClasses['form-input__field']} value={userData['user-name']} onChange={inputChangeHandler}></input>
                 </div>
-                <div className='form-input__section'>
-                    <label htmlFor="user-age" className='form-input__label'>Age</label>
-                    <input type="number" id="user-age" className='form-input__field' value={userData['user-age']} onChange={inputChangeHandler}></input>
+                <div className={addUserClasses['form-input__section']}>
+                    <label htmlFor="user-age" className={addUserClasses['form-input__label']}>Age</label>
+                    <input type="number" id="user-age" className={addUserClasses['form-input__field']} value={userData['user-age']} onChange={inputChangeHandler}></input>
                 </div>
-                <button className={'form-button'}>Add user</button>
+                <button className={addUserClasses['form-button']}>Add user</button>
             </form>
         </Card>
     )

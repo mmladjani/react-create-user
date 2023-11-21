@@ -1,15 +1,13 @@
 import React from 'react';
-import './AlertModal.css';
-import '../../App.css';
+import AlertModalclasses from './AlertModal.module.css';
+import classes from '../../App.module.css';
 import Card from '../Shared/Card';
 
 const AlertModal = (props) => {
 
-
-
     return (
-        <Card className="main">
-            <div className='alert-modal'>
+        <Card className={classes.main}>
+            <div className={AlertModalclasses['alert-modal']}>
                 <p>{props.message}</p>
             </div>
         </Card>

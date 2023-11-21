@@ -1,5 +1,6 @@
 import React from 'react';
-import './UserList.css'
+import userClasses from './UserList.module.css'
+import classes from '../../App.module.css';
 import User from './User';
 import Card from '../Shared/Card';
 
@@ -8,8 +9,8 @@ const UserList = (props) => {
     const { users } = props;
     
     return (
-        <Card className="main">
-            <div className="user-list">
+        <Card className={classes.main}>
+            <div className={userClasses['user-list']}>
                 {users.map((user, index) => <User key={index} user={user} /> )}
             </div>
         </Card>

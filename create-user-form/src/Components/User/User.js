@@ -1,10 +1,10 @@
 import React from 'react';
-import './User.css';
+import classes from './User.module.css';
 
 const User = (props) => {
 
     return (
-        <p className="user">{props.user['user-name']}, {props.user['user-age']}</p>
+        <p className={classes.user}>{props.user['user-name']}, {props.user['user-age']}</p>
     )
 }
 
