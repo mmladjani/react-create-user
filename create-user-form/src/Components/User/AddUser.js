@@ -3,6 +3,7 @@ import { useState } from 'react';
 import addUserClasses from './AddUser.module.css';
 import classes from '../../App.module.css';
 import Card from '../Shared/Card';
+import Button from '../Shared/Button';
 
 const DUMMY_USER = {
     'user-name': 'John Doe',
@@ -52,7 +53,7 @@ const AddUser = (props) => {
                     <label htmlFor="user-age" className={addUserClasses['form-input__label']}>Age</label>
                     <input type="number" id="user-age" className={addUserClasses['form-input__field']} value={userData['user-age']} onChange={inputChangeHandler}></input>
                 </div>
-                <button className={addUserClasses['form-button']}>Add user</button>
+                <Button type='submit'>Add user</Button>
             </form>
         </Card>
     )
