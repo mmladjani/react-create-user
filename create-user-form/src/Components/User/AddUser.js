@@ -21,10 +21,12 @@ const AddUser = (props) => {
         setUserData((previousValue) => {
             return {
                 ...previousValue,
-                [event.target.id]: event.target.value
+                [event.target.id]: event.target.value.trim()
             }
         }) 
     }
+
+    console.log({userData})
 
     const submitHandler = (event) => {
         event.preventDefault();
