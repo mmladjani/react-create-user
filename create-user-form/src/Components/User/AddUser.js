@@ -26,7 +26,7 @@ const AddUser = (props) => {
         }) 
     }
 
-    console.log({userData})
+    console.log(userData, 'userData')
 
     const submitHandler = (event) => {
         event.preventDefault();
@@ -41,6 +41,7 @@ const AddUser = (props) => {
             props.onAddUserMessage(customMessage);
         } else {
             props.onAddUser(userData)
+            setUserData({'user-name': '', 'user-age': ''});
         }
     }
 
