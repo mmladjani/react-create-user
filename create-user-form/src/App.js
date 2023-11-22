@@ -27,8 +27,6 @@ function App() {
     setUserMessage(null);
   }
 
-  console.log({users})
-
   return (
       <div>
         <AddUser onAddUser={addUserToList} onAddUserMessage={addUserMessage}/>
