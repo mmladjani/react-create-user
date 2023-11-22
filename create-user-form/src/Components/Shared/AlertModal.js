@@ -6,7 +6,6 @@ import Button from './Button';
 
 const AlertModal = (props) => {
 
-    console.log(props)
     return (
         <div>
             <div className={AlertModalclasses.backdrop}></div>

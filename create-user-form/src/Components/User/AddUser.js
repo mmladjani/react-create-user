@@ -26,8 +26,6 @@ const AddUser = (props) => {
         }) 
     }
 
-    console.log(userData, 'userData')
-
     const submitHandler = (event) => {
         event.preventDefault();
         if(userData['user-name'].trim().length < 3 && userData['user-age'] < 3) {
@@ -50,6 +48,7 @@ const AddUser = (props) => {
         <Card className={classes.main}>
             <form onSubmit={submitHandler} className={addUserClasses.form}>
                 <div className={addUserClasses['form-input__section']}>
+                    <label htmlFor="user-name" className={addUserClasses['form-input__label']}>Username</label>
                     <input type="text" id="user-name" className={addUserClasses['form-input__field']} value={userData['user-name']} onChange={inputChangeHandler}></input>
                 </div>
                 <div className={addUserClasses['form-input__section']}>
