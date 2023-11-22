@@ -1,7 +1,7 @@
 import React from 'react';
 import AddUser from './Components/User/AddUser';
 import UserList from './Components/User/UserList';
-import AlertModal from './Components/User/AlertModal';
+import AlertModal from './Components/Shared/AlertModal';
 import { useState } from 'react';
 
 function App() {
@@ -23,13 +23,17 @@ function App() {
     setUserMessage('');
   }
 
+  const closeModal = () => {
+    setUserMessage(null);
+  }
+
   console.log({users})
 
   return (
       <div>
         <AddUser onAddUser={addUserToList} onAddUserMessage={addUserMessage}/>
         {users.length > 0 && <UserList users={users} />}
-        {userMessage && <AlertModal message={userMessage} />}
+        {userMessage && <AlertModal onConfirm={closeModal} message={userMessage} />}
       </div>
   );
 }

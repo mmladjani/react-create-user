@@ -1,0 +1,35 @@
+.alert-modal {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    padding: 2rem;
+    border-radius: 15px;
+    background-image: linear-gradient(to right top, #4D8076, #417573, #396A6F, #335E69, #315361, #2F4858);
+    height: 11rem;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 1rem;
+    position: fixed;
+    top: 35%;
+    text-align: center;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.50);
+}
+  
+@media (min-width: 768px) {
+    .modal {
+        left: calc(50% - 20rem);
+        width: 40rem;
+    }
+}
