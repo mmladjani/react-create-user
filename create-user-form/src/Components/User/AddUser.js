@@ -21,7 +21,7 @@ const AddUser = (props) => {
         setUserData((previousValue) => {
             return {
                 ...previousValue,
-                [event.target.id]: event.target.value.trim()
+                [event.target.id]: event.target.value
             }
         }) 
     }
@@ -30,13 +30,13 @@ const AddUser = (props) => {
 
     const submitHandler = (event) => {
         event.preventDefault();
-        if(userData['user-name'].length < 3 && userData['user-age'] < 3) {
+        if(userData['user-name'].trim().length < 3 && userData['user-age'] < 3) {
             customMessage = 'user name must be at least 3 characters long, and user age must be greater then 3...';
             props.onAddUserMessage(customMessage);
         } else if(userData['user-age'] < 3) {
             customMessage = 'user age must be at greater then 3...';
             props.onAddUserMessage(customMessage);
-        } else if(userData['user-name'].length < 3) {
+        } else if(userData['user-name'].trim().length < 3) {
             customMessage = 'user name must be at least 3 characters long...'
             props.onAddUserMessage(customMessage);
         } else {
